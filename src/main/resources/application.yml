@@ -15,3 +15,14 @@ server:
   tomcat:
     uri-encoding: UTF-8
     basedir: ../tomcat/${server.port}
+
+cometd:
+  url: /cometd/*
+  bayeux:
+    timeout: 30000
+    maxInterval: 10000
+    broadcastToPublisher: false
+  oort:
+    url: http://localhost:9011/cometd
+    secret: Cluster.Secret.Content
+    cloud: http://localhost:9012/cometd,http://localhost:9013/cometd
